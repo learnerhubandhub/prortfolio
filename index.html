@@ -1,63 +1,552 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of [Your Name], a software developer specializing in [Your Skills/Field]." />
-  <meta name="keywords" content="Software Developer, Portfolio, GitHub, Projects, HTML, CSS, JavaScript" />
-  <meta name="author" content="[Your Name]" />
-  <title>[Your Name] | Developer Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <meta name="description" content="Portfolio of Jawad Jawad, a software developer specializing in web application development and problem-solving." />
+  <meta name="keywords" content="Software Developer, Portfolio, GitHub, Projects, HTML, CSS, JavaScript, IHK certification" />
+  <meta name="author" content="Jawad Jawad" />
+  <title>Jawad Jawad | Software Developer Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <style>
+    :root {
+      --primary-color: #0d6efd;
+      --secondary-color: #6c757d;
+      --dark-color: #212529;
+      --light-color: #f8f9fa;
+      --accent-color: #ffc107;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5f5;
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, var(--dark-color) 0%, #1a1e21 100%);
+      padding: 6rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: 0.8;
+    }
+    
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid var(--light-color);
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .section-title {
+      position: relative;
+      margin-bottom: 2rem;
+      color: var(--dark-color);
+      font-weight: 600;
+    }
+    
+    .section-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 50px;
+      height: 3px;
+      background-color: var(--primary-color);
+    }
+    
+    .card {
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .card-img-top {
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .placeholder-img {
+      background: linear-gradient(45deg, #e9ecef 25%, #dee2e6 25%, #dee2e6 50%, #e9ecef 50%, #e9ecef 75%, #dee2e6 75%, #dee2e6 100%);
+      background-size: 20px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6c757d;
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+    
+    .card-title {
+      font-weight: 600;
+      color: var(--dark-color);
+    }
+    
+    .btn-custom {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-custom:hover {
+      background-color: #0b5ed7;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 1rem;
+    }
+    
+    .skill-badge {
+      background-color: #e9ecef;
+      color: var(--dark-color);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+    
+    .skill-badge:hover {
+      background-color: var(--primary-color);
+      color: white;
+      transform: scale(1.05);
+    }
+    
+    footer {
+      background: linear-gradient(135deg, var(--dark-color) 0%, #1a1e21 100%);
+      padding: 2rem 0;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      margin: 0 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background-color: var(--primary-color);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: #e9ecef;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1px;
+    }
+    
+    .timeline-container {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+    
+    .timeline-container::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: -10px;
+      background-color: white;
+      border: 4px solid var(--primary-color);
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    .left {
+      left: 0;
+    }
+    
+    .right {
+      left: 50%;
+    }
+    
+    .right::after {
+      left: -10px;
+    }
+    
+    .timeline-content {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    @media screen and (max-width: 768px) {
+      .timeline::after {
+        left: 31px;
+      }
+      
+      .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .right {
+        left: 0;
+      }
+      
+      .left::after, .right::after {
+        left: 15px;
+      }
+    }
+    
+    @media screen and (max-width: 576px) {
+      .hero-section {
+        padding: 4rem 0;
+      }
+      
+      .profile-image {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="bg-dark text-white text-center py-4">
-    <h1>Ammar SHAMS EDDIN</h1>
-    <p class="lead">Software Developer</p>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">JJ</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section text-white text-center">
+    <div class="container">
+      <img src="/api/placeholder/150/150" alt="Jawad Jawad" class="profile-image mb-4">
+      <h1 class="display-4 fw-bold">Jawad Jawad</h1>
+      <p class="lead mb-4">Software Developer | Problem Solver | Lifelong Learner</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#contact" class="btn btn-light px-4 py-2">Get In Touch</a>
+        <a href="#projects" class="btn btn-outline-light px-4 py-2">View My Work</a>
+      </div>
+    </div>
   </header>
 
-  <section class="container my-5">
-    <h2>About Me</h2>
-    <p>
-As a motivated career changer with a strong belief in lifelong learning, I successfully completed my retraining as an Software  Development Specialist with an IHK certification (Germany). This journey allowed me to build a solid foundation in software development while honing my ability to quickly adapt to new technologies. My strong self-learning skills enable me to efficiently acquire and apply new concepts, making me a versatile and driven developer ready to tackle challenges and grow continuously.
-
-And I'm passionate about building web apps and tools that solve real-world problems.
-    </p>
-  </section>
-
-  <section class="container my-5">
-    <h2>Projects</h2>
-    <div class="row">
-      <!-- Project 1 -->
-      <div class="col-md-4 mb-3">
-        <div class="card h-100">
-          
-          <div class="card-body">
-            <h5 class="card-title">TRUCK GMBH-</h5>
-            <p class="card-text"> The project is a small application The project is a small application vThe project is a small application The project is a small application The project is a small applicationThe project is a small application vThe project is a small application </p>
-            <a href="https://github.com/learnerhubandhub/truck.git" class="btn btn-primary">View Code</a>
-          </div>
+  <!-- About Section -->
+  <section id="about" class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="section-title">About Me</h2>
+          <p class="fs-5">
+            As a motivated career changer with a strong belief in lifelong learning, I successfully completed my retraining as a Software Development Specialist with an IHK certification (Germany). This journey allowed me to build a solid foundation in software development while honing my ability to quickly adapt to new technologies.
+          </p>
+          <p class="fs-5">
+            My strong self-learning skills enable me to efficiently acquire and apply new concepts, making me a versatile and driven developer ready to tackle challenges and grow continuously. I'm passionate about building web applications and tools that solve real-world problems and deliver exceptional user experiences.
+          </p>
         </div>
       </div>
-	   <!-- Project 2 -->
-      <div class="col-md-4 mb-3">
-        <div class="card h-100">
-          <img src="images/project1.png" class="card-img-top" alt="Project 1 Screenshot">
-          <div class="card-body">
-            <h5 class="card-title">Project Title</h5>
-            <p class="card-text">Short project description.</p>
-            <a href="https://github.com/learnerhubandhub/project1" class="btn btn-primary">View Code</a>
-          </div>
-        </div>
-      </div>
-      <!-- Repeat for more projects -->
     </div>
   </section>
 
-  <footer class="bg-dark text-white text-center py-3">
-    <p>&copy; 2025 Ammar SHAMS EDDIN. All rights reserved.</p>
-    <p>Connect with me on <a href="https://linkedin.com/in/yourusername" class="text-light">LinkedIn</a></p>
+  <!-- Skills Section -->
+  <section id="skills" class="py-5">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Frontend Development</h5>
+              <div class="skills-container">
+                <span class="skill-badge">HTML5</span>
+                <span class="skill-badge">CSS3</span>
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">React</span>
+                <span class="skill-badge">Bootstrap</span>
+                <span class="skill-badge">Responsive Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Backend Development</h5>
+              <div class="skills-container">
+                <span class="skill-badge">Node.js</span>
+                <span class="skill-badge">Express</span>
+                <span class="skill-badge">RESTful APIs</span>
+                <span class="skill-badge">SQL</span>
+                <span class="skill-badge">MongoDB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Tools & Technologies</h5>
+              <div class="skills-container">
+                <span class="skill-badge">Git</span>
+                <span class="skill-badge">GitHub</span>
+                <span class="skill-badge">VS Code</span>
+                <span class="skill-badge">Agile/Scrum</span>
+                <span class="skill-badge">Responsive Design</span>
+                <span class="skill-badge">CI/CD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="row g-4">
+        <!-- Project 1 -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="placeholder-img card-img-top">
+              TRUCK GMBH
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">TRUCK GMBH</h5>
+              <p class="card-text">A logistics management application that streamlines freight operations, tracking, and management for a German trucking company. Features route optimization, real-time tracking, and reporting dashboards.</p>
+              <div class="skills-container mb-3">
+                <span class="skill-badge">HTML</span>
+                <span class="skill-badge">CSS</span>
+                <span class="skill-badge">JavaScript</span>
+              </div>
+              <a href="https://github.com/learnerhubandhub/truck.git" class="btn btn-custom" target="_blank">View Code</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="placeholder-img card-img-top">
+              Project 2
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">E-Commerce Platform</h5>
+              <p class="card-text">A full-featured online shopping platform with product catalog, user authentication, shopping cart functionality, and payment integration.</p>
+              <div class="skills-container mb-3">
+                <span class="skill-badge">React</span>
+                <span class="skill-badge">Node.js</span>
+                <span class="skill-badge">MongoDB</span>
+              </div>
+              <a href="https://github.com/learnerhubandhub/project1" class="btn btn-custom" target="_blank">View Code</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="placeholder-img card-img-top">
+              Project 3
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Weather Dashboard</h5>
+              <p class="card-text">An interactive weather forecasting application that provides real-time weather updates, forecasts, and location-based weather alerts.</p>
+              <div class="skills-container mb-3">
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">API Integration</span>
+                <span class="skill-badge">Bootstrap</span>
+              </div>
+              <a href="#" class="btn btn-custom" target="_blank">View Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-5">
+        <a href="https://github.com/learnerhubandhub" class="btn btn-outline-dark px-4 py-2" target="_blank">View More Projects on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-5">
+    <div class="container">
+      <h2 class="section-title">Experience & Education</h2>
+      <div class="timeline">
+        <div class="timeline-container left">
+          <div class="timeline-content">
+            <h4>Software Development Specialist</h4>
+            <h6>IHK Certification, Germany</h6>
+            <p class="text-muted">2023 - 2024</p>
+            <p>Comprehensive training in software development principles, methodologies, and technologies. Specialized in web application development and modern programming frameworks.</p>
+          </div>
+        </div>
+        <div class="timeline-container right">
+          <div class="timeline-content">
+            <h4>Previous Career</h4>
+            <h6>Professional Experience</h6>
+            <p class="text-muted">Before 2023</p>
+            <p>Leveraged transferable skills such as problem-solving, communication, and project management from previous professional experience to excel in software development.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mx-auto text-center">
+          <h2 class="section-title text-center">Get In Touch</h2>
+          <p class="mb-4">Interested in collaborating or have a project in mind? Feel free to reach out!</p>
+          <div class="card p-4">
+            <div class="mb-3">
+              <a href="mailto:jawad@example.com" class="btn btn-custom w-100 mb-2">jawad@example.com</a>
+              <a href="https://linkedin.com/in/jawadjawad" class="btn btn-outline-dark w-100" target="_blank">LinkedIn Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-white text-center">
+    <div class="container">
+      <h4 class="mb-3">Jawad Jawad</h4>
+      <p>Software Developer based in Germany</p>
+      <div class="social-links mb-4">
+        <a href="https://github.com/learnerhubandhub" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/jawadjawad" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+          </svg>
+        </a>
+        <a href="mailto:jawad@example.com">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+          </svg>
+        </a>
+      </div>
+      <p class="small">&copy; 2025 Jawad Jawad. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- Bootstrap & JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Add smooth scrolling to all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+        
+        // Close mobile menu when a link is clicked
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+          navbarToggler.click();
+        }
+      });
+    });
+    
+    // Add active class to navigation links based on scroll position
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
